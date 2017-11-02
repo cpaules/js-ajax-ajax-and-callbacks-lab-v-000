@@ -23,3 +23,7 @@ function showRepositories(repos) {
   }).join('') + "</ul>"
   document.getElementById("results").innerHTML = repoList
 }
+
+function displayError() {
+  $("#errors").html("error, try again")
+}
