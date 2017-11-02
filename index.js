@@ -32,6 +32,15 @@ function showCommits(el) {
   })
 }
 
+function displayCommits(data) {
+  const result = data.map((r) => {
+    return `<ul><li>
+      <h3>${r.sha}</h3><p>${r.commit.message}</p>
+      </li></ul>`
+  }).join('')
+  return result;
+}
+
 function displayError() {
   $("#errors").html("error, try again")
 }
