@@ -24,6 +24,14 @@ function showRepositories(repos) {
   document.getElementById("results").innerHTML = repoList
 }
 
+function showCommits(el) {
+  $.get(`https://api.github.com/repos/${el.dataset.owner}/${el.dataset.repository}/commits`, data => {
+    $("#details").html(displayCommits(data))
+  }).fail(error => {
+    displayError();
+  })
+}
+
 function displayError() {
   $("#errors").html("error, try again")
 }
